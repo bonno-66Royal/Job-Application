@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini project · Job application form | Purple & blue theme</title>
-    <!-- Bootstrap 5 CSS (for modern responsive styling) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS: purple, blue, black – overriding/bootstrap with theme colors -->
     <style>
-        /* ===== GLOBAL & BODY (purple/blue/black theme) ===== */
         body {
             background: linear-gradient(145deg, #f3e8ff 0%, #d9e6ff 100%);
             font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
@@ -17,20 +14,20 @@
             align-items: center;
             justify-content: center;
             margin: 20px;
-            color: #1a1a1a; /* dark grey (almost black) for text */
+            color: #1a1a1a; 
         }
         .form-wrapper {
             background-color: white;
             border-radius: 2rem 2rem 2rem 2rem;
             box-shadow: 0 20px 40px -10px rgba(79, 38, 131, 0.4);
             padding: 2.5rem 2rem;
-            border-left: 10px solid #6f42c1;   /* purple left border */
-            border-right: 10px solid #0d6efd;  /* blue right border */
+            border-left: 10px solid #6f42c1; 
+            border-right: 10px solid #0d6efd; 
             max-width: 1000px;
             width: 100%;
         }
         h1 {
-            color: #2b0b3f; /* deep purple-black */
+            color: #2b0b3f; 
             font-weight: 700;
             letter-spacing: -0.5px;
             border-bottom: 4px solid #0d6efd;
@@ -38,9 +35,8 @@
             display: inline-block;
             margin-bottom: 1.5rem;
         }
-        /* ===== FIELDSET & LEGEND (custom purple/blue) ===== */
         fieldset {
-            border: 2px solid #7b4caf; /* medium purple */
+            border: 2px solid #7b4caf; 
             padding: 1.8rem 1.5rem 1.8rem 1.5rem;
             border-radius: 30px 30px 25px 25px;
             margin-bottom: 2rem;
@@ -48,7 +44,7 @@
             transition: box-shadow 0.2s;
         }
         fieldset:hover {
-            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.2); /* blue glow */
+            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.2); 
         }
         legend {
             background: linear-gradient(130deg, #6f42c1, #0d6efd);
@@ -64,25 +60,25 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             text-shadow: 1px 1px 2px black;
         }
-        /* ======= FORM LABELS & CONTROLS (bootstrap + custom touches) ======= */
+      
         .form-label {
             font-weight: 600;
-            color: #1e1e2f; /* near black */
+            color: #1e1e2f;
             margin-bottom: 0.2rem;
         }
         .form-control, .form-select, textarea.form-control {
-            border: 2px solid #b3a0d4; /* soft purple border */
+            border: 2px solid #b3a0d4; 
             border-radius: 16px;
             padding: 0.6rem 1rem;
             background-color: white;
             transition: border 0.2s, box-shadow 0.2s;
         }
         .form-control:focus, .form-select:focus, textarea:focus {
-            border-color: #0d6efd !important; /* blue focus */
-            box-shadow: 0 0 0 4px rgba(111, 66, 193, 0.3); /* purple outer glow */
+            border-color: #0d6efd !important; 
+            box-shadow: 0 0 0 4px rgba(111, 66, 193, 0.3); 
             outline: none;
         }
-        /* checkboxes & radios – custom紫色 and blue */
+       
         .form-check-input {
             border: 2px solid #4b2a8b;
             background-color: white;
@@ -99,21 +95,21 @@
             color: black;
             font-weight: 500;
         }
-        /* BUTTONS – purple, blue, black */
+       
         .btn-primary {
-            background-color: #6f42c1; /* purple base */
-            border: 3px solid #0d6efd;  /* blue border */
+            background-color: #6f42c1; 
+            border: 3px solid #0d6efd;  
             color: white;
             font-weight: 700;
             padding: 12px 32px;
             border-radius: 60px;
             letter-spacing: 0.5px;
             transition: 0.15s;
-            box-shadow: 0 6px 0 #2b0b3f; /* black shadow */
+            box-shadow: 0 6px 0 #2b0b3f;
         }
         .btn-primary:hover {
-            background-color: #0d6efd; /* blue */
-            border-color: #6f42c1;      /* purple */
+            background-color: #0d6efd; 
+            border-color: #6f42c1;      
             transform: translateY(-2px);
             box-shadow: 0 8px 0 #2b0b3f;
         }
@@ -122,7 +118,7 @@
             box-shadow: 0 2px 0 black;
         }
         .btn-secondary {
-            background-color: #212529; /* black-ish */
+            background-color: #212529; 
             border: 3px solid #6f42c1;
             color: white;
             font-weight: 600;
@@ -140,18 +136,17 @@
             transform: translateY(3px);
             box-shadow: 0 2px 0 black;
         }
-        /* spacing & hr */
         hr {
             border: 2px solid #6f42c1;
             opacity: 0.5;
             margin: 2rem 0;
         }
-        /* inline tweaks for address row */
+      
         .row-custom p {
             color: black;
             font-weight: 500;
         }
-        /* error / alert (js will use native alert, but we style nothing) */
+       
     </style>
 </head>
 <body>
@@ -159,9 +154,7 @@
         <h1>🔷 JOB APPLICATION · SALES DIVISION</h1>
         <p class="lead" style="color: #2d2d5c; border-left: 6px solid #6f42c1; padding-left: 1rem;">✨ complete the form (purple, blue & black edition) – all fields required except message</p>
 
-        <!-- FORM STARTS HERE – with onsubmit validation -->
         <form onsubmit="return validateForm()" method="post" action="#" id="jobApplicationForm" novalidate>
-            <!-- SECTION 1: PERSONAL INFO (fieldset) -->
             <fieldset>
                 <legend>🧑‍💼 Personal information</legend>
                 <div class="row g-3">
@@ -184,7 +177,6 @@
                 </div>
             </fieldset>
 
-            <!-- SECTION 2: POSITION INFO + employment type (radio) -->
             <fieldset>
                 <legend>📌 Position details</legend>
                 <div class="row">
@@ -221,7 +213,6 @@
                 </div>
             </fieldset>
 
-            <!-- SECTION 3: AREAS OF INTEREST (checkboxes – exactly as required) -->
             <fieldset>
                 <legend>✅ Area(s) of interest * (select at least one)</legend>
                 <div class="row ps-3">
@@ -258,7 +249,6 @@
                 </div>
             </fieldset>
 
-            <!-- SECTION 4: RELOCATION (radio yes/no) -->
             <fieldset>
                 <legend>📍 Relocation willingness</legend>
                 <div class="mb-3">
@@ -274,7 +264,6 @@
                 </div>
             </fieldset>
 
-            <!-- SECTION 5: ADDITIONAL MESSAGE (textarea) -->
             <fieldset>
                 <legend>📝 Additional message</legend>
                 <div class="mb-3">
@@ -282,10 +271,7 @@
                     <textarea class="form-control" id="additionalMsg" name="message" rows="3" placeholder="Tell us briefly about your motivation..."></textarea>
                 </div>
             </fieldset>
-
-            <!-- hidden note: required fields are name, email, telephone, at least one interest checkbox -->
             
-            <!-- BUTTON GROUP : SUBMIT + RESET (purple/blue/black) -->
             <div class="d-flex justify-content-center gap-4 mt-5 flex-wrap">
                 <button type="submit" class="btn btn-primary btn-lg px-5 py-3">✅ SUBMIT APPLICATION</button>
                 <button type="reset" class="btn btn-secondary btn-lg px-5 py-3">⟲ RESET FORM</button>
@@ -294,15 +280,12 @@
         </form>
     </div>
 
-    <!-- JAVASCRIPT VALIDATION (simple alerts, as required) -->
     <script>
         function validateForm() {
-            // get form fields
             const fullname = document.getElementById('fullname').value.trim();
             const email = document.getElementById('email').value.trim();
             const telephone = document.getElementById('telephone').value.trim();
 
-            // 1) check required text fields
             if (fullname === '') {
                 alert('❗ Full name is required.');
                 return false;
@@ -316,7 +299,6 @@
                 return false;
             }
 
-            // 2) check at least one area of interest (checkbox group name = "interestArea")
             const interestCheckboxes = document.querySelectorAll('input[name="interestArea"]');
             let atLeastOneChecked = false;
             for (let cb of interestCheckboxes) {
@@ -330,17 +312,13 @@
                 return false;
             }
 
-            // (optional) employment type and relocation are not strictly required, but you could add.
-            // we follow the brief: name, email, telephone, at least one interest. plus we give a friendly alert.
+            
             alert('✅ Form is valid! (demo – no data sent to server)');
-            return true;  // would allow submission; but no action set, so page reloads.
+            return true; 
         }
     </script>
-
-    <!-- optional reset confirmation (bootstrap + nice look) -->
-    <!-- everything is in place. additional micro-style for purple/blue: -->
+    
     <style>
-        /* extra purple/blue details */
         .form-wrapper {
             border-left: 12px solid #6f42c1;
             border-right: 12px solid #0d6efd;
@@ -352,20 +330,17 @@
         .btn-primary, .btn-secondary {
             font-size: 1.3rem;
         }
-        /* black & purple hr */
         hr {
             border: none;
             height: 4px;
             background: linear-gradient(90deg, black, #6f42c1, #0d6efd, black);
         }
-        /* placeholder style */
+       
         ::placeholder {
             color: #7b6c9c !important;
             opacity: 0.6;
         }
     </style>
-
-    <!-- include bootstrap bundle (optional for any JS plugins, but not needed) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+js"></script>
 </body>
 </html>
