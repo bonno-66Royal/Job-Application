@@ -3,271 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Application Form - TechCorp</title>
-    
-    <!-- Bootstrap CSS -->
+    <title>Mini project · Job application form | Purple & blue theme</title>
+    <!-- Bootstrap 5 CSS (for modern responsive styling) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons (optional but nice) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    
-    <!-- Custom CSS -->
+    <!-- Custom CSS: purple, blue, black – overriding/bootstrap with theme colors -->
     <style>
+        /* ===== GLOBAL & BODY (purple/blue/black theme) ===== */
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(145deg, #f3e8ff 0%, #d9e6ff 100%);
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
             min-height: 100vh;
-            padding: 40px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+            color: #1a1a1a; /* dark grey (almost black) for text */
         }
-        
-        .form-container {
+        .form-wrapper {
             background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            padding: 30px;
-            margin: 20px auto;
-            max-width: 800px;
+            border-radius: 2rem 2rem 2rem 2rem;
+            box-shadow: 0 20px 40px -10px rgba(79, 38, 131, 0.4);
+            padding: 2.5rem 2rem;
+            border-left: 10px solid #6f42c1;   /* purple left border */
+            border-right: 10px solid #0d6efd;  /* blue right border */
+            max-width: 1000px;
+            width: 100%;
         }
-        
         h1 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 30px;
-            font-weight: 600;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 15px;
+            color: #2b0b3f; /* deep purple-black */
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            border-bottom: 4px solid #0d6efd;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
         }
-        
+        /* ===== FIELDSET & LEGEND (custom purple/blue) ===== */
         fieldset {
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 25px;
-            background-color: #fafafa;
-            transition: all 0.3s ease;
+            border: 2px solid #7b4caf; /* medium purple */
+            padding: 1.8rem 1.5rem 1.8rem 1.5rem;
+            border-radius: 30px 30px 25px 25px;
+            margin-bottom: 2rem;
+            background-color: rgba(111, 66, 193, 0.02);
+            transition: box-shadow 0.2s;
         }
-        
         fieldset:hover {
-            border-color: #667eea;
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.2); /* blue glow */
         }
-        
         legend {
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1.2rem;
-            width: auto;
-            padding: 0 15px;
-            margin-left: 15px;
-            border-bottom: none;
-            background-color: white;
-            border: 2px solid #e0e0e0;
-            border-radius: 20px;
-            padding: 5px 20px;
-        }
-        
-        .required-field::after {
-            content: " *";
-            color: red;
-            font-weight: bold;
-        }
-        
-        .form-control:focus, .form-select:focus {
-            border-color: #667eea;
-            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            transition: transform 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-        }
-        
-        .btn-reset {
-            background-color: #6c757d;
-            border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            margin-left: 10px;
-        }
-        
-        .btn-reset:hover {
-            background-color: #5a6268;
-        }
-        
-        .form-check-input:checked {
-            background-color: #667eea;
-            border-color: #667eea;
-        }
-        
-        .error-message {
-            color: #dc3545;
-            font-size: 0.875rem;
-            margin-top: 5px;
-            display: none;
-        }
-        
-        .is-invalid {
-            border-color: #dc3545 !important;
-        }
-        
-        .is-invalid:focus {
-            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
-        }
-        
-        /* Submit button styling matching the reference */
-        input[type="submit"] {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(130deg, #6f42c1, #0d6efd);
             color: white;
-            border: none;
-            padding: 12px 30px;
             font-weight: 600;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
+            font-size: 1.4rem;
+            padding: 0.5rem 1.8rem;
+            border-radius: 40px;
+            border: 2px solid black;
+            width: auto;
+            margin-left: 1rem;
+            margin-bottom: 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 2px black;
         }
-        
-        input[type="submit"]:hover {
+        /* ======= FORM LABELS & CONTROLS (bootstrap + custom touches) ======= */
+        .form-label {
+            font-weight: 600;
+            color: #1e1e2f; /* near black */
+            margin-bottom: 0.2rem;
+        }
+        .form-control, .form-select, textarea.form-control {
+            border: 2px solid #b3a0d4; /* soft purple border */
+            border-radius: 16px;
+            padding: 0.6rem 1rem;
+            background-color: white;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+        .form-control:focus, .form-select:focus, textarea:focus {
+            border-color: #0d6efd !important; /* blue focus */
+            box-shadow: 0 0 0 4px rgba(111, 66, 193, 0.3); /* purple outer glow */
+            outline: none;
+        }
+        /* checkboxes & radios – custom紫色 and blue */
+        .form-check-input {
+            border: 2px solid #4b2a8b;
+            background-color: white;
+        }
+        .form-check-input:checked {
+            background-color: #6f42c1;
+            border-color: #0d6efd;
+        }
+        .form-check-input:focus {
+            box-shadow: 0 0 0 4px rgba(111, 66, 193, 0.3);
+            border-color: #0d6efd;
+        }
+        .form-check-label {
+            color: black;
+            font-weight: 500;
+        }
+        /* BUTTONS – purple, blue, black */
+        .btn-primary {
+            background-color: #6f42c1; /* purple base */
+            border: 3px solid #0d6efd;  /* blue border */
+            color: white;
+            font-weight: 700;
+            padding: 12px 32px;
+            border-radius: 60px;
+            letter-spacing: 0.5px;
+            transition: 0.15s;
+            box-shadow: 0 6px 0 #2b0b3f; /* black shadow */
+        }
+        .btn-primary:hover {
+            background-color: #0d6efd; /* blue */
+            border-color: #6f42c1;      /* purple */
             transform: translateY(-2px);
-            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            box-shadow: 0 8px 0 #2b0b3f;
         }
-        
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
+        .btn-primary:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 black;
         }
+        .btn-secondary {
+            background-color: #212529; /* black-ish */
+            border: 3px solid #6f42c1;
+            color: white;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 60px;
+            transition: 0.15s;
+            box-shadow: 0 5px 0 #0b0b0b;
+        }
+        .btn-secondary:hover {
+            background-color: #6f42c1;
+            border-color: #0d6efd;
+            color: white;
+        }
+        .btn-secondary:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 black;
+        }
+        /* spacing & hr */
+        hr {
+            border: 2px solid #6f42c1;
+            opacity: 0.5;
+            margin: 2rem 0;
+        }
+        /* inline tweaks for address row */
+        .row-custom p {
+            color: black;
+            font-weight: 500;
+        }
+        /* error / alert (js will use native alert, but we style nothing) */
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <h1><i class="bi bi-briefcase-fill me-2"></i>Job Application Form</h1>
-            
-            <!-- Updated form with action_page.php and submit button -->
-            <form name="jobApplication" action="action_page.php" method="post" onsubmit="return validateForm()">
-                <!-- Personal Information Section -->
-                <fieldset>
-                    <legend><i class="bi bi-person-fill me-2"></i>Personal Information</legend>
-                    
-                    <div class="row">
-                        <div class="col-md-12 mb-3">
-                            <label for="fullname" class="form-label required-field">Full Name</label>
-                            <input type="text" class="form-control" id="fullname" name="fullname" 
-                                   placeholder="Enter your full name">
-                            <div class="error-message" id="nameError">Please enter your full name</div>
-                        </div>
+    <div class="form-wrapper">
+        <h1>🔷 JOB APPLICATION · SALES DIVISION</h1>
+        <p class="lead" style="color: #2d2d5c; border-left: 6px solid #6f42c1; padding-left: 1rem;">✨ complete the form (purple, blue & black edition) – all fields required except message</p>
+
+        <!-- FORM STARTS HERE – with onsubmit validation -->
+        <form onsubmit="return validateForm()" method="post" action="#" id="jobApplicationForm" novalidate>
+            <!-- SECTION 1: PERSONAL INFO (fieldset) -->
+            <fieldset>
+                <legend>🧑‍💼 Personal information</legend>
+                <div class="row g-3">
+                    <div class="col-md-6 mb-3">
+                        <label for="fullname" class="form-label">Full name *</label>
+                        <input type="text" class="form-control" id="fullname" name="fullname" placeholder="e.g. Alex Johnson">
                     </div>
-                    
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="email" class="form-label required-field">Email Address</label>
-                            <input type="email" class="form-control" id="email" name="email" 
-                                   placeholder="@example.gmail.com">
-                            <div class="error-message" id="emailError">Please enter your email address</div>
-                        </div>
-                        
-                        <div class="col-md-6 mb-3">
-                            <label for="telephone" class="form-label required-field">Telephone Number</label>
-                            <input type="tel" class="form-control" id="telephone" name="telephone" 
-                                   placeholder="(267) 7865-7890">
-                            <div class="error-message" id="phoneError">Please enter your telephone number</div>
-                        </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">Email address *</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
                     </div>
-                    
-                    <div class="mb-3">
-                        <label for="address" class="form-label">Physical Address</label>
-                        <textarea class="form-control" id="address" name="address" rows="2" 
-                                  placeholder="Enter your full address"></textarea>
+                    <div class="col-md-6 mb-3">
+                        <label for="telephone" class="form-label">Telephone *</label>
+                        <input type="tel" class="form-control" id="telephone" name="telephone" placeholder="+1 555 123 4567">
                     </div>
-                </fieldset>
-                
-                <!-- Position Information Section -->
-                <fieldset>
-                    <legend><i class="bi bi-briefcase me-2"></i>Position Information</legend>
-                    
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="jobTitle" class="form-label">Desired Job Title</label>
-                            <select class="form-select" id="jobTitle" name="jobTitle">
-                                <option value="">Select a position...</option>
-                                <option value="Software Engineer">Software Engineer</option>
-                                <option value="Sales Representative">Sales Representative</option>
-                                <option value="Marketing Specialist">Marketing Specialist</option>
-                                <option value="HR Manager">HR Manager</option>
-                                <option value="Product Manager">Product Manager</option>
-                            </select>
-                        </div>
-                        
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label d-block">Employment Type</label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="employmentType" 
-                                       id="partTimeContract" value="Part-time contract">
-                                <label class="form-check-label" for="partTimeContract">Part-time contract</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="employmentType" 
-                                       id="partTimePermanent" value="Part-time permanent">
-                                <label class="form-check-label" for="partTimePermanent">Part-time permanent</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="employmentType" 
-                                       id="fullTimeContract" value="Full-time contract">
-                                <label class="form-check-label" for="fullTimeContract">Full-time contract</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="employmentType" 
-                                       id="fullTimePermanent" value="Full-time permanent">
-                                <label class="form-check-label" for="fullTimePermanent">Full-time permanent</label>
-                            </div>
-                        </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="address" class="form-label">Physical address *</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Street, city, postal code">
                     </div>
-                </fieldset>
-                
-                <!-- Areas of Interest Section -->
-                <fieldset>
-                    <legend><i class="bi bi-star-fill me-2"></i>Area(s) of Interest</legend>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="interest" 
-                                       id="accountExecutive" value="Account Executive">
-                                <label class="form-check-label" for="accountExecutive">Account Executive</label>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="interest" 
-                                       id="businessDevelopment" value="Business Development">
-                                <label class="form-check-label" for="businessDevelopment">Business Development</label>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-                
-                <!-- Submit Button Section - Following the reference -->
-                <div class="button-container">
-                    <input type="submit" value="Submit">
                 </div>
-            </form>
-        </div>
+            </fieldset>
+
+            <!-- SECTION 2: POSITION INFO + employment type (radio) -->
+            <fieldset>
+                <legend>📌 Position details</legend>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <label for="jobTitle" class="form-label">Desired job title *</label>
+                        <select class="form-select" id="jobTitle" name="jobTitle">
+                            <option selected disabled value="">-- select a role --</option>
+                            <option value="sales_rep">Sales Representative</option>
+                            <option value="account_exec">Account Executive</option>
+                            <option value="bd_manager">Business Development Manager</option>
+                            <option value="sales_manager">Sales Manager</option>
+                            <option value="vp_sales">VP of Sales</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <label class="form-label d-block">Employment type *</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="employmentType" id="partTimeContract" value="Part-time contract">
+                            <label class="form-check-label" for="partTimeContract">Part-time contract</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="employmentType" id="partTimePerm" value="Part-time permanent">
+                            <label class="form-check-label" for="partTimePerm">Part-time permanent</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="employmentType" id="fullTimeContract" value="Full-time contract">
+                            <label class="form-check-label" for="fullTimeContract">Full-time contract</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="employmentType" id="fullTimePerm" value="Full-time permanent">
+                            <label class="form-check-label" for="fullTimePerm">Full-time permanent</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- SECTION 3: AREAS OF INTEREST (checkboxes – exactly as required) -->
+            <fieldset>
+                <legend>✅ Area(s) of interest * (select at least one)</legend>
+                <div class="row ps-3">
+                    <div class="col-sm-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="interestArea" id="areaAccountExec" value="Account Executive">
+                            <label class="form-check-label" for="areaAccountExec">Account Executive</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="interestArea" id="areaBizDev" value="Business Development">
+                            <label class="form-check-label" for="areaBizDev">Business Development</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="interestArea" id="areaInsideSales" value="Inside Sales">
+                            <label class="form-check-label" for="areaInsideSales">Inside Sales</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="interestArea" id="areaSalesManager" value="Sales Manager">
+                            <label class="form-check-label" for="areaSalesManager">Sales Manager</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="interestArea" id="areaVpSales" value="VP Sales">
+                            <label class="form-check-label" for="areaVpSales">VP Sales</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- SECTION 4: RELOCATION (radio yes/no) -->
+            <fieldset>
+                <legend>📍 Relocation willingness</legend>
+                <div class="mb-3">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="relocation" id="relocYes" value="Yes">
+                        <label class="form-check-label" for="relocYes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="relocation" id="relocNo" value="No">
+                        <label class="form-check-label" for="relocNo">No</label>
+                    </div>
+                    <small class="text-muted d-block mt-1">(optional, but nice to know)</small>
+                </div>
+            </fieldset>
+
+            <!-- SECTION 5: ADDITIONAL MESSAGE (textarea) -->
+            <fieldset>
+                <legend>📝 Additional message</legend>
+                <div class="mb-3">
+                    <label for="additionalMsg" class="form-label">Why are you suitable for this role? (optional)</label>
+                    <textarea class="form-control" id="additionalMsg" name="message" rows="3" placeholder="Tell us briefly about your motivation..."></textarea>
+                </div>
+            </fieldset>
+
+            <!-- hidden note: required fields are name, email, telephone, at least one interest checkbox -->
+            
+            <!-- BUTTON GROUP : SUBMIT + RESET (purple/blue/black) -->
+            <div class="d-flex justify-content-center gap-4 mt-5 flex-wrap">
+                <button type="submit" class="btn btn-primary btn-lg px-5 py-3">✅ SUBMIT APPLICATION</button>
+                <button type="reset" class="btn btn-secondary btn-lg px-5 py-3">⟲ RESET FORM</button>
+            </div>
+            <p class="text-center mt-4 fw-semibold" style="color: #4a2c6d;">* required fields (name, email, telephone + at least one interest)</p>
+        </form>
     </div>
 
-    <!-- Bootstrap JS (optional for some features) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- JavaScript validation function (placeholder) -->
+    <!-- JAVASCRIPT VALIDATION (simple alerts, as required) -->
     <script>
         function validateForm() {
-            // Add your validation logic here
-            return true;
+            // get form fields
+            const fullname = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telephone = document.getElementById('telephone').value.trim();
+
+            // 1) check required text fields
+            if (fullname === '') {
+                alert('❗ Full name is required.');
+                return false;
+            }
+            if (email === '') {
+                alert('❗ Email address is required.');
+                return false;
+            }
+            if (telephone === '') {
+                alert('❗ Telephone number is required.');
+                return false;
+            }
+
+            // 2) check at least one area of interest (checkbox group name = "interestArea")
+            const interestCheckboxes = document.querySelectorAll('input[name="interestArea"]');
+            let atLeastOneChecked = false;
+            for (let cb of interestCheckboxes) {
+                if (cb.checked) {
+                    atLeastOneChecked = true;
+                    break;
+                }
+            }
+            if (!atLeastOneChecked) {
+                alert('❗ Please select at least one Area of Interest (checkboxes).');
+                return false;
+            }
+
+            // (optional) employment type and relocation are not strictly required, but you could add.
+            // we follow the brief: name, email, telephone, at least one interest. plus we give a friendly alert.
+            alert('✅ Form is valid! (demo – no data sent to server)');
+            return true;  // would allow submission; but no action set, so page reloads.
         }
     </script>
+
+    <!-- optional reset confirmation (bootstrap + nice look) -->
+    <!-- everything is in place. additional micro-style for purple/blue: -->
+    <style>
+        /* extra purple/blue details */
+        .form-wrapper {
+            border-left: 12px solid #6f42c1;
+            border-right: 12px solid #0d6efd;
+        }
+        legend {
+            background: linear-gradient(145deg, #6f42c1, #0d6efd);
+            border: 2px solid black;
+        }
+        .btn-primary, .btn-secondary {
+            font-size: 1.3rem;
+        }
+        /* black & purple hr */
+        hr {
+            border: none;
+            height: 4px;
+            background: linear-gradient(90deg, black, #6f42c1, #0d6efd, black);
+        }
+        /* placeholder style */
+        ::placeholder {
+            color: #7b6c9c !important;
+            opacity: 0.6;
+        }
+    </style>
+
+    <!-- include bootstrap bundle (optional for any JS plugins, but not needed) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
