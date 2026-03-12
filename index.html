@@ -120,6 +120,28 @@
         .is-invalid:focus {
             box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
         }
+        
+        /* Submit button styling matching the reference */
+        input[type="submit"] {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+        
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -127,7 +149,8 @@
         <div class="form-container">
             <h1><i class="bi bi-briefcase-fill me-2"></i>Job Application Form</h1>
             
-            <form name="jobApplication" onsubmit="return validateForm()" method="post">
+            <!-- Updated form with action_page.php and submit button -->
+            <form name="jobApplication" action="action_page.php" method="post" onsubmit="return validateForm()">
                 <!-- Personal Information Section -->
                 <fieldset>
                     <legend><i class="bi bi-person-fill me-2"></i>Personal Information</legend>
@@ -225,4 +248,26 @@
                                 <label class="form-check-label" for="businessDevelopment">Business Development</label>
                             </div>
                         </div>
+                    </div>
+                </fieldset>
+                
+                <!-- Submit Button Section - Following the reference -->
+                <div class="button-container">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
 
+    <!-- Bootstrap JS (optional for some features) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript validation function (placeholder) -->
+    <script>
+        function validateForm() {
+            // Add your validation logic here
+            return true;
+        }
+    </script>
+</body>
+</html>
